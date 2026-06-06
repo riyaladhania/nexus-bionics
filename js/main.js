@@ -8,27 +8,41 @@
 // We hid the default cursor in CSS (cursor: none on body).
 // Now we make our own gold glow that follows the mouse.
 
+// ── 1. CUSTOM CURSOR GLOW ───────────────────────────────────
 const cursorGlow = document.getElementById('cursorGlow');
 
-// 'mousemove' fires every time the mouse moves
-// 'e' is the event object — it contains the mouse's X and Y position
+// Move cursor instantly with no delay
 document.addEventListener('mousemove', (e) => {
   cursorGlow.style.left = e.clientX + 'px';
   cursorGlow.style.top  = e.clientY + 'px';
 });
 
-// When mouse hovers a clickable element, grow the cursor
+// Show cursor only after first mouse movement
+document.addEventListener('mousemove', () => {
+  cursorGlow.style.opacity = '1';
+}, { once: true });
+
+// Grow on hover over clickable elements
 document.querySelectorAll('a, button').forEach(el => {
   el.addEventListener('mouseenter', () => {
-    cursorGlow.style.width  = '48px';
-    cursorGlow.style.height = '48px';
-    cursorGlow.style.opacity = '0.6';
+    cursorGlow.style.width  = '44px';
+    cursorGlow.style.height = '44px';
   });
   el.addEventListener('mouseleave', () => {
-    cursorGlow.style.width  = '24px';
-    cursorGlow.style.height = '24px';
-    cursorGlow.style.opacity = '1';
+    cursorGlow.style.width  = '20px';
+    cursorGlow.style.height = '20px';
   });
+});
+
+// Hide default cursor on entire page
+document.body.style.cursor = 'none';
+
+// Restore default cursor if mouse leaves the window
+document.addEventListener('mouseleave', () => {
+  cursorGlow.style.opacity = '0';
+});
+document.addEventListener('mouseenter', () => {
+  cursorGlow.style.opacity = '1';
 });
 
 
@@ -129,7 +143,46 @@ if (heroTitle) {
 let glitchRunning = false;
 
 function restoreAll() {
-  // Always restore t
+  if (!heroTitle) return;
+
+  textNodes.forEach((node, index) => {
+    node.textContent = textOriginals[index];
+  });
+
+  if (goldSpan) {
+    goldSpan.textContent = goldOriginal;
+  }
+
+  glitchRunning = false;
+}
+
+function randomGlitchText(text) {
+  return text.split('').map(char => {
+    return Math.random() < 0.25 ? glitchChars[Math.floor(Math.random() * glitchChars.length)] : char;
+  }).join('');
+}
+
+function runGlitch() {
+  if (!heroTitle || glitchRunning) return;
+  glitchRunning = true;
+
+  textNodes.forEach((node, index) => {
+    const original = textOriginals[index];
+    node.textContent = randomGlitchText(original);
+  });
+
+  if (goldSpan) {
+    goldSpan.textContent = randomGlitchText(goldOriginal);
+  }
+
+  setTimeout(() => {
+    restoreAll();
+  }, 120);
+}
+
+if (heroTitle) {
+  setInterval(runGlitch, 3800);
+}
 
 // ── 6. MOBILE HAMBURGER MENU ────────────────────────────────
 const hamburger = document.getElementById('hamburger');

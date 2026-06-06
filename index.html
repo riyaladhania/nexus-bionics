@@ -12,15 +12,18 @@
 
   <!-- Our stylesheets -->
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/animations.css">
 </head>
 
 <body>
 
   <!-- ===================== CURSOR (custom glow dot) ===================== -->
+
+
+  <!-- CURSOR -->
   <div class="cursor-glow" id="cursorGlow"></div>
 
-  <!-- ===================== NAVBAR ===================== -->
+  <!-- NAVBAR -->
   <nav class="navbar" id="navbar">
     <div class="nav-container">
       <a href="#" class="nav-logo">
@@ -299,15 +302,10 @@
   </footer>
 
   <!-- Scripts (loaded at bottom so HTML renders first) -->
-  <script src="js/main.js"></script>
-  <script src="js/three-scene.js"></script>
-
-<!-- Three.js library — loaded from CDN (no install needed) -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-
-  <!-- Our files -->
-  <script src="js/main.js"></script>
-  <script src="js/three-scene.js"></script>
+  <!-- Load Three.js from CDN first for reliability; three-scene.js will still attempt fallbacks if needed -->
+  <script src="https://unpkg.com/three@0.128.0/build/three.min.js" crossorigin></script>
+  <script src="js/three-scene.js?v=2"></script>
+  <script src="js/main.js?v=2"></script>
 
 </body>
 </html>

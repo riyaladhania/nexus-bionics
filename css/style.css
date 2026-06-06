@@ -59,15 +59,17 @@ img { max-width: 100%; display: block; }
 
 /* 4. CUSTOM CURSOR */
 .cursor-glow {
-  width: 24px;
-  height: 24px;
-  background: radial-gradient(circle, rgba(212,175,55,0.8) 0%, transparent 70%);
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle, rgba(212,175,55,0.9) 0%, rgba(212,175,55,0.3) 40%, transparent 70%);
   border-radius: 50%;
   position: fixed;
   pointer-events: none;
   z-index: 9999;
   transform: translate(-50%, -50%);
-  transition: transform 0.1s ease, width 0.2s ease, height 0.2s ease;
+  top: -100px;
+  left: -100px;
+  transition: width 0.2s ease, height 0.2s ease, opacity 0.2s ease;
 }
 
 /* 5. NAVBAR */
