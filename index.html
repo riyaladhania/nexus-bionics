@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEXUS BIONICS — Engineered to Evolve</title>
+  <!-- Google Fonts: Orbitron for headings, Inter for body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Our stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+
+<body>
+
+  <!-- ===================== CURSOR (custom glow dot) ===================== -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        NX<span class="logo-dot">·</span>BIO
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">Research</a></li>
+        <li><a href="#services">Augments</a></li>
+        <li><a href="#tech">Technology</a></li>
+        <li><a href="#testimonials">Subjects</a></li>
+      </ul>
+      <a href="#cta" class="nav-cta-btn">Enlist Now</a>
+
+      <!-- Hamburger for mobile -->
+      <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===================== HERO SECTION ===================== -->
+  <header class="hero" id="home">
+    <div class="hero-content">
+      <p class="hero-tag">Cybernetic Research Division — Est. 2031</p>
+  <br>
+ <h1 class="hero-title">
+  ENGINEERED<br>
+  <span class="hero-title-gold">TO EVOLVE</span><br>
+  BEYOND ALL<br>
+  LIMITS.
+</h1>
+    
+      <p class="hero-subtitle">
+        NEXUS BIONICS engineers the fusion of organic tissue and synthetic intelligence.
+        Redefining the limits of human performance since 2031.
+      </p>
+      <div class="hero-buttons">
+        <a href="#services" class="btn-primary">Begin Augmentation</a>
+        <a href="#about" class="btn-secondary">View Research</a>
+      </div>
+    </div>
+
+    <!-- The 3D canvas will live here (Phase 5) -->
+    <div class="hero-3d" id="hero3d">
+      <canvas id="threeCanvas"></canvas>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator">
+      <span>SCROLL</span>
+      <div class="scroll-line"></div>
+    </div>
+  </header>
+
+  <!-- ===================== STATS BAR ===================== -->
+  <section class="stats-bar">
+    <div class="stat-item">
+      <span class="stat-number">2,847</span>
+      <span class="stat-label">Subjects Augmented</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <span class="stat-number">99.7%</span>
+      <span class="stat-label">Survival Rate</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <span class="stat-number">47</span>
+      <span class="stat-label">Lead Researchers</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <span class="stat-number">Series VII</span>
+      <span class="stat-label">Current Generation</span>
+    </div>
+  </section>
+
+  <!-- ===================== ABOUT SECTION ===================== -->
+  <section class="about" id="about">
+    <div class="section-container">
+      <div class="about-text">
+        <p class="section-tag">About the Division</p>
+        <h2 class="section-title">Pushing the Boundary of<br><span class="gold-text">Human Biology</span></h2>
+        <p class="section-body">
+          Founded in 2031 by a collective of rogue neuroscientists and aerospace engineers,
+          NEXUS BIONICS operates at the intersection of organic tissue engineering and
+          synthetic intelligence. Our augmentation protocols have redefined what it means
+          to be human.
+        </p>
+        <p class="section-body">
+          Each subject undergoes a 14-phase integration process, merging titanium-alloy
+          skeletal support, cortex-embedded neural chips, and real-time AI co-processing
+          into a unified cybernetic system.
+        </p>
+        <a href="#services" class="btn-primary" style="margin-top: 2rem; display:inline-block;">
+          Explore Augments
+        </a>
+      </div>
+      <div class="about-visual">
+        <div class="about-glow-box">
+          <div class="glow-ring"></div>
+          <div class="glow-ring ring-2"></div>
+          <div class="glow-core">
+            <span class="core-text">NX</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SERVICES SECTION ===================== -->
+  <section class="services" id="services">
+    <div class="section-container">
+      <p class="section-tag" style="text-align:center;">Augmentation Catalogue</p>
+      <h2 class="section-title" style="text-align:center;">
+        Choose Your<br><span class="gold-text">Evolution</span>
+      </h2>
+
+      <div class="cards-grid">
+
+        <div class="glass-card reveal">
+          <div class="card-number">01</div>
+          <div class="card-icon">⬡</div>
+          <h3 class="card-title">Neural Link</h3>
+          <p class="card-desc">
+            Direct cortex-to-machine interface via sub-cranial mesh implant.
+            Latency under 0.3ms. Supports 14 simultaneous data streams.
+          </p>
+          <div class="card-spec">Latency: &lt;0.3ms</div>
+        </div>
+
+        <div class="glass-card reveal">
+          <div class="card-number">02</div>
+          <div class="card-icon">◈</div>
+          <h3 class="card-title">Skeletal Augment</h3>
+          <p class="card-desc">
+            Full titanium-alloy skeletal reinforcement fused at the molecular level.
+            Load capacity increased by 847%. Zero rejection rate in Series VII.
+          </p>
+          <div class="card-spec">Strength: +847%</div>
+        </div>
+
+        <div class="glass-card reveal">
+          <div class="card-number">03</div>
+          <div class="card-icon">⬢</div>
+          <h3 class="card-title">Cortex Sync</h3>
+          <p class="card-desc">
+            Embedded AI co-processor running 4.2 trillion operations per second.
+            Cognitive enhancement, memory augmentation, and reflex optimization.
+          </p>
+          <div class="card-spec">Processing: 4.2T ops/s</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TECHNOLOGY SECTION ===================== -->
+  <section class="technology" id="tech">
+    <div class="section-container">
+      <p class="section-tag">Core Technology</p>
+      <h2 class="section-title">The Systems<br><span class="gold-text">Behind the Evolution</span></h2>
+
+      <div class="tech-grid">
+        <div class="tech-item reveal">
+          <div class="tech-label">Material</div>
+          <div class="tech-value">Grade-7 Titanium Alloy</div>
+        </div>
+        <div class="tech-item reveal">
+          <div class="tech-label">Neural Chip</div>
+          <div class="tech-value">NX-Cortex 4.2T</div>
+        </div>
+        <div class="tech-item reveal">
+          <div class="tech-label">Integration</div>
+          <div class="tech-value">14-Phase Protocol</div>
+        </div>
+        <div class="tech-item reveal">
+          <div class="tech-label">Power Source</div>
+          <div class="tech-value">Bio-Electric Harvesting</div>
+        </div>
+        <div class="tech-item reveal">
+          <div class="tech-label">OS</div>
+          <div class="tech-value">NexusOS v7.1</div>
+        </div>
+        <div class="tech-item reveal">
+          <div class="tech-label">Uptime</div>
+          <div class="tech-value">99.998% SLA</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TESTIMONIALS SECTION ===================== -->
+  <section class="testimonials" id="testimonials">
+    <div class="section-container">
+      <p class="section-tag" style="text-align:center;">Subject Testimonials</p>
+      <h2 class="section-title" style="text-align:center;">
+        Voices of the<br><span class="gold-text">Augmented</span>
+      </h2>
+
+      <div class="testimonials-grid">
+
+        <div class="testimonial-card reveal">
+          <p class="testimonial-text">
+            "The Neural Link changed everything. I process information at a level
+            that feels superhuman. There is no going back to baseline."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">S7</div>
+            <div>
+              <div class="author-name">Subject 7 — Kira Nakamura</div>
+              <div class="author-role">Neural Link · Series VI</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal">
+          <p class="testimonial-text">
+            "Skeletal Augmentation took 11 days. The pain was temporary.
+            The result is permanent. I am no longer limited by biology."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">S12</div>
+            <div>
+              <div class="author-name">Subject 12 — Marcus Vale</div>
+              <div class="author-role">Skeletal Augment · Series VII</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal">
+          <p class="testimonial-text">
+            "Cortex Sync gave me a co-pilot inside my own mind.
+            I make decisions in milliseconds that once took hours."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">S31</div>
+            <div>
+              <div class="author-name">Subject 31 — Dr. Yael Osman</div>
+              <div class="author-role">Cortex Sync · Series VII</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CTA SECTION ===================== -->
+  <section class="cta-section" id="cta">
+    <div class="cta-content">
+      <p class="section-tag" style="text-align:center;">Ready to Evolve?</p>
+      <h2 class="cta-title">
+        Begin Your<br><span class="gold-text">Augmentation</span>
+      </h2>
+      <p class="cta-sub">
+        Limited intake slots available. Series VII protocol now accepting candidates.
+      </p>
+      <a href="#" class="btn-primary btn-large">Apply for Augmentation</a>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-logo">NX<span class="logo-dot">·</span>BIO</div>
+      <p class="footer-tagline">Engineered to Evolve. Est. 2031.</p>
+      <div class="footer-links">
+        <a href="#">Research</a>
+        <a href="#">Augments</a>
+        <a href="#">Ethics Board</a>
+        <a href="#">Contact</a>
+      </div>
+      <p class="footer-copy">© 2047 NEXUS BIONICS. All augmentation rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts (loaded at bottom so HTML renders first) -->
+  <script src="js/main.js"></script>
+  <script src="js/three-scene.js"></script>
+
+<!-- Three.js library — loaded from CDN (no install needed) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- Our files -->
+  <script src="js/main.js"></script>
+  <script src="js/three-scene.js"></script>
+
+</body>
+</html>
